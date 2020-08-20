@@ -1323,6 +1323,400 @@ namespace Microsoft.Azure.Management.CosmosDB
             }
 
             /// <summary>
+            /// Retrieves the properties of an existing Azure Cosmos DB Role Definition.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='roleDefinitionId'>
+            /// The GUID for the Role Definition.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// The name of the resource group. The name is case insensitive.
+            /// </param>
+            /// <param name='databaseAccountName'>
+            /// Name of Cosmos DB database account.
+            /// </param>
+            public static SqlRoleDefinitionGetResults GetRoleDefinition(this ISqlResourcesOperations operations, string roleDefinitionId, string resourceGroupName, string databaseAccountName)
+            {
+                return operations.GetRoleDefinitionAsync(roleDefinitionId, resourceGroupName, databaseAccountName).GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Retrieves the properties of an existing Azure Cosmos DB Role Definition.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='roleDefinitionId'>
+            /// The GUID for the Role Definition.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// The name of the resource group. The name is case insensitive.
+            /// </param>
+            /// <param name='databaseAccountName'>
+            /// Name of Cosmos DB database account.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<SqlRoleDefinitionGetResults> GetRoleDefinitionAsync(this ISqlResourcesOperations operations, string roleDefinitionId, string resourceGroupName, string databaseAccountName, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.GetRoleDefinitionWithHttpMessagesAsync(roleDefinitionId, resourceGroupName, databaseAccountName, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <summary>
+            /// Creates or updates an Azure Cosmos DB Role Definition.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='roleDefinitionId'>
+            /// The GUID for the Role Definition.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// The name of the resource group. The name is case insensitive.
+            /// </param>
+            /// <param name='databaseAccountName'>
+            /// Name of Cosmos DB database account.
+            /// </param>
+            /// <param name='createUpdateSqlRoleDefinitionParameters'>
+            /// The properties required to create or update a Role Definition.
+            /// </param>
+            public static SqlRoleDefinitionGetResults CreateOrUpdateRoleDefinition(this ISqlResourcesOperations operations, string roleDefinitionId, string resourceGroupName, string databaseAccountName, SqlRoleDefinitionProperties createUpdateSqlRoleDefinitionParameters)
+            {
+                return operations.CreateOrUpdateRoleDefinitionAsync(roleDefinitionId, resourceGroupName, databaseAccountName, createUpdateSqlRoleDefinitionParameters).GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Creates or updates an Azure Cosmos DB Role Definition.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='roleDefinitionId'>
+            /// The GUID for the Role Definition.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// The name of the resource group. The name is case insensitive.
+            /// </param>
+            /// <param name='databaseAccountName'>
+            /// Name of Cosmos DB database account.
+            /// </param>
+            /// <param name='createUpdateSqlRoleDefinitionParameters'>
+            /// The properties required to create or update a Role Definition.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<SqlRoleDefinitionGetResults> CreateOrUpdateRoleDefinitionAsync(this ISqlResourcesOperations operations, string roleDefinitionId, string resourceGroupName, string databaseAccountName, SqlRoleDefinitionProperties createUpdateSqlRoleDefinitionParameters, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.CreateOrUpdateRoleDefinitionWithHttpMessagesAsync(roleDefinitionId, resourceGroupName, databaseAccountName, createUpdateSqlRoleDefinitionParameters, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <summary>
+            /// Deletes an existing Azure Cosmos DB Role Definition.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='roleDefinitionId'>
+            /// The GUID for the Role Definition.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// The name of the resource group. The name is case insensitive.
+            /// </param>
+            /// <param name='databaseAccountName'>
+            /// Name of Cosmos DB database account.
+            /// </param>
+            public static void DeleteRoleDefinition(this ISqlResourcesOperations operations, string roleDefinitionId, string resourceGroupName, string databaseAccountName)
+            {
+                operations.DeleteRoleDefinitionAsync(roleDefinitionId, resourceGroupName, databaseAccountName).GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Deletes an existing Azure Cosmos DB Role Definition.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='roleDefinitionId'>
+            /// The GUID for the Role Definition.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// The name of the resource group. The name is case insensitive.
+            /// </param>
+            /// <param name='databaseAccountName'>
+            /// Name of Cosmos DB database account.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task DeleteRoleDefinitionAsync(this ISqlResourcesOperations operations, string roleDefinitionId, string resourceGroupName, string databaseAccountName, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                (await operations.DeleteRoleDefinitionWithHttpMessagesAsync(roleDefinitionId, resourceGroupName, databaseAccountName, null, cancellationToken).ConfigureAwait(false)).Dispose();
+            }
+
+            /// <summary>
+            /// Retrieves the list of all Azure Cosmos DB Role Definitions based on the
+            /// filter.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// The name of the resource group. The name is case insensitive.
+            /// </param>
+            /// <param name='databaseAccountName'>
+            /// Name of Cosmos DB database account.
+            /// </param>
+            /// <param name='filter'>
+            /// The filter to be applied on the request. Use $filter=type eq
+            /// 'BuiltInRole|CustomRole' to filter by type. Use $filter=roleName eq {name}
+            /// to retrieve Role Definition with the given name.
+            /// </param>
+            public static IEnumerable<SqlRoleDefinitionGetResults> ListRoleDefinitions(this ISqlResourcesOperations operations, string resourceGroupName, string databaseAccountName, string filter = default(string))
+            {
+                return operations.ListRoleDefinitionsAsync(resourceGroupName, databaseAccountName, filter).GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Retrieves the list of all Azure Cosmos DB Role Definitions based on the
+            /// filter.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// The name of the resource group. The name is case insensitive.
+            /// </param>
+            /// <param name='databaseAccountName'>
+            /// Name of Cosmos DB database account.
+            /// </param>
+            /// <param name='filter'>
+            /// The filter to be applied on the request. Use $filter=type eq
+            /// 'BuiltInRole|CustomRole' to filter by type. Use $filter=roleName eq {name}
+            /// to retrieve Role Definition with the given name.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<IEnumerable<SqlRoleDefinitionGetResults>> ListRoleDefinitionsAsync(this ISqlResourcesOperations operations, string resourceGroupName, string databaseAccountName, string filter = default(string), CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.ListRoleDefinitionsWithHttpMessagesAsync(resourceGroupName, databaseAccountName, filter, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <summary>
+            /// Retrieves the properties of an existing Azure Cosmos DB Role Assignment.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='roleAssignmentId'>
+            /// The GUID for the Role Assignment.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// The name of the resource group. The name is case insensitive.
+            /// </param>
+            /// <param name='databaseAccountName'>
+            /// Name of Cosmos DB database account.
+            /// </param>
+            public static SqlRoleAssignmentGetResults GetRoleAssignment(this ISqlResourcesOperations operations, string roleAssignmentId, string resourceGroupName, string databaseAccountName)
+            {
+                return operations.GetRoleAssignmentAsync(roleAssignmentId, resourceGroupName, databaseAccountName).GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Retrieves the properties of an existing Azure Cosmos DB Role Assignment.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='roleAssignmentId'>
+            /// The GUID for the Role Assignment.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// The name of the resource group. The name is case insensitive.
+            /// </param>
+            /// <param name='databaseAccountName'>
+            /// Name of Cosmos DB database account.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<SqlRoleAssignmentGetResults> GetRoleAssignmentAsync(this ISqlResourcesOperations operations, string roleAssignmentId, string resourceGroupName, string databaseAccountName, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.GetRoleAssignmentWithHttpMessagesAsync(roleAssignmentId, resourceGroupName, databaseAccountName, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <summary>
+            /// Creates or updates an Azure Cosmos DB Role Assignment.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='roleAssignmentId'>
+            /// The GUID for the Role Assignment.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// The name of the resource group. The name is case insensitive.
+            /// </param>
+            /// <param name='databaseAccountName'>
+            /// Name of Cosmos DB database account.
+            /// </param>
+            /// <param name='createUpdateSqlRoleAssignmentParameters'>
+            /// The properties required to create or update a Role Assignment.
+            /// </param>
+            public static SqlRoleAssignmentGetResults CreateOrUpdateRoleAssignment(this ISqlResourcesOperations operations, string roleAssignmentId, string resourceGroupName, string databaseAccountName, SqlRoleAssignmentProperties createUpdateSqlRoleAssignmentParameters)
+            {
+                return operations.CreateOrUpdateRoleAssignmentAsync(roleAssignmentId, resourceGroupName, databaseAccountName, createUpdateSqlRoleAssignmentParameters).GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Creates or updates an Azure Cosmos DB Role Assignment.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='roleAssignmentId'>
+            /// The GUID for the Role Assignment.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// The name of the resource group. The name is case insensitive.
+            /// </param>
+            /// <param name='databaseAccountName'>
+            /// Name of Cosmos DB database account.
+            /// </param>
+            /// <param name='createUpdateSqlRoleAssignmentParameters'>
+            /// The properties required to create or update a Role Assignment.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<SqlRoleAssignmentGetResults> CreateOrUpdateRoleAssignmentAsync(this ISqlResourcesOperations operations, string roleAssignmentId, string resourceGroupName, string databaseAccountName, SqlRoleAssignmentProperties createUpdateSqlRoleAssignmentParameters, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.CreateOrUpdateRoleAssignmentWithHttpMessagesAsync(roleAssignmentId, resourceGroupName, databaseAccountName, createUpdateSqlRoleAssignmentParameters, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <summary>
+            /// Deletes an existing Azure Cosmos DB Role Assignment.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='roleAssignmentId'>
+            /// The GUID for the Role Assignment.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// The name of the resource group. The name is case insensitive.
+            /// </param>
+            /// <param name='databaseAccountName'>
+            /// Name of Cosmos DB database account.
+            /// </param>
+            public static void DeleteRoleAssignment(this ISqlResourcesOperations operations, string roleAssignmentId, string resourceGroupName, string databaseAccountName)
+            {
+                operations.DeleteRoleAssignmentAsync(roleAssignmentId, resourceGroupName, databaseAccountName).GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Deletes an existing Azure Cosmos DB Role Assignment.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='roleAssignmentId'>
+            /// The GUID for the Role Assignment.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// The name of the resource group. The name is case insensitive.
+            /// </param>
+            /// <param name='databaseAccountName'>
+            /// Name of Cosmos DB database account.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task DeleteRoleAssignmentAsync(this ISqlResourcesOperations operations, string roleAssignmentId, string resourceGroupName, string databaseAccountName, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                (await operations.DeleteRoleAssignmentWithHttpMessagesAsync(roleAssignmentId, resourceGroupName, databaseAccountName, null, cancellationToken).ConfigureAwait(false)).Dispose();
+            }
+
+            /// <summary>
+            /// Retrieves the list of all Azure Cosmos DB Role Assignments based on the
+            /// filter.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// The name of the resource group. The name is case insensitive.
+            /// </param>
+            /// <param name='databaseAccountName'>
+            /// Name of Cosmos DB database account.
+            /// </param>
+            /// <param name='filter'>
+            /// The filter to be applied on the request. Use $filter=principalId eq
+            /// 'edcf5256-366c-4cf0-9007-d450b8e48737' to retrieve all Role Assignments
+            /// granted to the given AAD principal. Use
+            /// $filter=assignedTo('edcf5256-366c-4cf0-9007-d450b8e48737') to retrieve all
+            /// Role Assignments granted to the given AAD principal. Use
+            /// $filter=atScope('/dbs/contoso-sales') to retrieve all Role Assignments
+            /// granted for the database 'contoso-sales' or higher up.
+            /// </param>
+            public static IEnumerable<SqlRoleAssignmentGetResults> ListRoleAssignments(this ISqlResourcesOperations operations, string resourceGroupName, string databaseAccountName, string filter = default(string))
+            {
+                return operations.ListRoleAssignmentsAsync(resourceGroupName, databaseAccountName, filter).GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Retrieves the list of all Azure Cosmos DB Role Assignments based on the
+            /// filter.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// The name of the resource group. The name is case insensitive.
+            /// </param>
+            /// <param name='databaseAccountName'>
+            /// Name of Cosmos DB database account.
+            /// </param>
+            /// <param name='filter'>
+            /// The filter to be applied on the request. Use $filter=principalId eq
+            /// 'edcf5256-366c-4cf0-9007-d450b8e48737' to retrieve all Role Assignments
+            /// granted to the given AAD principal. Use
+            /// $filter=assignedTo('edcf5256-366c-4cf0-9007-d450b8e48737') to retrieve all
+            /// Role Assignments granted to the given AAD principal. Use
+            /// $filter=atScope('/dbs/contoso-sales') to retrieve all Role Assignments
+            /// granted for the database 'contoso-sales' or higher up.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<IEnumerable<SqlRoleAssignmentGetResults>> ListRoleAssignmentsAsync(this ISqlResourcesOperations operations, string resourceGroupName, string databaseAccountName, string filter = default(string), CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.ListRoleAssignmentsWithHttpMessagesAsync(resourceGroupName, databaseAccountName, filter, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <summary>
             /// Create or update an Azure Cosmos DB SQL database
             /// </summary>
             /// <param name='operations'>
@@ -1993,6 +2387,196 @@ namespace Microsoft.Azure.Management.CosmosDB
             public static async Task BeginDeleteSqlTriggerAsync(this ISqlResourcesOperations operations, string resourceGroupName, string accountName, string databaseName, string containerName, string triggerName, CancellationToken cancellationToken = default(CancellationToken))
             {
                 (await operations.BeginDeleteSqlTriggerWithHttpMessagesAsync(resourceGroupName, accountName, databaseName, containerName, triggerName, null, cancellationToken).ConfigureAwait(false)).Dispose();
+            }
+
+            /// <summary>
+            /// Creates or updates an Azure Cosmos DB Role Definition.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='roleDefinitionId'>
+            /// The GUID for the Role Definition.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// The name of the resource group. The name is case insensitive.
+            /// </param>
+            /// <param name='databaseAccountName'>
+            /// Name of Cosmos DB database account.
+            /// </param>
+            /// <param name='createUpdateSqlRoleDefinitionParameters'>
+            /// The properties required to create or update a Role Definition.
+            /// </param>
+            public static SqlRoleDefinitionGetResults BeginCreateOrUpdateRoleDefinition(this ISqlResourcesOperations operations, string roleDefinitionId, string resourceGroupName, string databaseAccountName, SqlRoleDefinitionProperties createUpdateSqlRoleDefinitionParameters)
+            {
+                return operations.BeginCreateOrUpdateRoleDefinitionAsync(roleDefinitionId, resourceGroupName, databaseAccountName, createUpdateSqlRoleDefinitionParameters).GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Creates or updates an Azure Cosmos DB Role Definition.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='roleDefinitionId'>
+            /// The GUID for the Role Definition.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// The name of the resource group. The name is case insensitive.
+            /// </param>
+            /// <param name='databaseAccountName'>
+            /// Name of Cosmos DB database account.
+            /// </param>
+            /// <param name='createUpdateSqlRoleDefinitionParameters'>
+            /// The properties required to create or update a Role Definition.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<SqlRoleDefinitionGetResults> BeginCreateOrUpdateRoleDefinitionAsync(this ISqlResourcesOperations operations, string roleDefinitionId, string resourceGroupName, string databaseAccountName, SqlRoleDefinitionProperties createUpdateSqlRoleDefinitionParameters, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.BeginCreateOrUpdateRoleDefinitionWithHttpMessagesAsync(roleDefinitionId, resourceGroupName, databaseAccountName, createUpdateSqlRoleDefinitionParameters, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <summary>
+            /// Deletes an existing Azure Cosmos DB Role Definition.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='roleDefinitionId'>
+            /// The GUID for the Role Definition.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// The name of the resource group. The name is case insensitive.
+            /// </param>
+            /// <param name='databaseAccountName'>
+            /// Name of Cosmos DB database account.
+            /// </param>
+            public static void BeginDeleteRoleDefinition(this ISqlResourcesOperations operations, string roleDefinitionId, string resourceGroupName, string databaseAccountName)
+            {
+                operations.BeginDeleteRoleDefinitionAsync(roleDefinitionId, resourceGroupName, databaseAccountName).GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Deletes an existing Azure Cosmos DB Role Definition.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='roleDefinitionId'>
+            /// The GUID for the Role Definition.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// The name of the resource group. The name is case insensitive.
+            /// </param>
+            /// <param name='databaseAccountName'>
+            /// Name of Cosmos DB database account.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task BeginDeleteRoleDefinitionAsync(this ISqlResourcesOperations operations, string roleDefinitionId, string resourceGroupName, string databaseAccountName, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                (await operations.BeginDeleteRoleDefinitionWithHttpMessagesAsync(roleDefinitionId, resourceGroupName, databaseAccountName, null, cancellationToken).ConfigureAwait(false)).Dispose();
+            }
+
+            /// <summary>
+            /// Creates or updates an Azure Cosmos DB Role Assignment.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='roleAssignmentId'>
+            /// The GUID for the Role Assignment.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// The name of the resource group. The name is case insensitive.
+            /// </param>
+            /// <param name='databaseAccountName'>
+            /// Name of Cosmos DB database account.
+            /// </param>
+            /// <param name='createUpdateSqlRoleAssignmentParameters'>
+            /// The properties required to create or update a Role Assignment.
+            /// </param>
+            public static SqlRoleAssignmentGetResults BeginCreateOrUpdateRoleAssignment(this ISqlResourcesOperations operations, string roleAssignmentId, string resourceGroupName, string databaseAccountName, SqlRoleAssignmentProperties createUpdateSqlRoleAssignmentParameters)
+            {
+                return operations.BeginCreateOrUpdateRoleAssignmentAsync(roleAssignmentId, resourceGroupName, databaseAccountName, createUpdateSqlRoleAssignmentParameters).GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Creates or updates an Azure Cosmos DB Role Assignment.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='roleAssignmentId'>
+            /// The GUID for the Role Assignment.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// The name of the resource group. The name is case insensitive.
+            /// </param>
+            /// <param name='databaseAccountName'>
+            /// Name of Cosmos DB database account.
+            /// </param>
+            /// <param name='createUpdateSqlRoleAssignmentParameters'>
+            /// The properties required to create or update a Role Assignment.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<SqlRoleAssignmentGetResults> BeginCreateOrUpdateRoleAssignmentAsync(this ISqlResourcesOperations operations, string roleAssignmentId, string resourceGroupName, string databaseAccountName, SqlRoleAssignmentProperties createUpdateSqlRoleAssignmentParameters, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.BeginCreateOrUpdateRoleAssignmentWithHttpMessagesAsync(roleAssignmentId, resourceGroupName, databaseAccountName, createUpdateSqlRoleAssignmentParameters, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <summary>
+            /// Deletes an existing Azure Cosmos DB Role Assignment.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='roleAssignmentId'>
+            /// The GUID for the Role Assignment.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// The name of the resource group. The name is case insensitive.
+            /// </param>
+            /// <param name='databaseAccountName'>
+            /// Name of Cosmos DB database account.
+            /// </param>
+            public static void BeginDeleteRoleAssignment(this ISqlResourcesOperations operations, string roleAssignmentId, string resourceGroupName, string databaseAccountName)
+            {
+                operations.BeginDeleteRoleAssignmentAsync(roleAssignmentId, resourceGroupName, databaseAccountName).GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Deletes an existing Azure Cosmos DB Role Assignment.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='roleAssignmentId'>
+            /// The GUID for the Role Assignment.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// The name of the resource group. The name is case insensitive.
+            /// </param>
+            /// <param name='databaseAccountName'>
+            /// Name of Cosmos DB database account.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task BeginDeleteRoleAssignmentAsync(this ISqlResourcesOperations operations, string roleAssignmentId, string resourceGroupName, string databaseAccountName, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                (await operations.BeginDeleteRoleAssignmentWithHttpMessagesAsync(roleAssignmentId, resourceGroupName, databaseAccountName, null, cancellationToken).ConfigureAwait(false)).Dispose();
             }
 
     }
