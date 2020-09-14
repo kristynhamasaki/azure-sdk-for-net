@@ -17,7 +17,9 @@ namespace CosmosDB.Tests.ScenarioTests
 
         // using an existing DB account, since Account provisioning takes 10-15 minutes
         const string resourceGroupName = "CosmosDBResourceGroup3668";
+        const string resourceGroupName2 = "kristynh";
         const string databaseAccountName = "db9934";
+        const string databaseAccountName2 = "kristynh-rbac";
 
         const string databaseName = "databaseName";
         const string databaseName2 = "databaseName2";
@@ -266,7 +268,7 @@ namespace CosmosDB.Tests.ScenarioTests
                 // Create client
                 CosmosDBManagementClient cosmosDBManagementClient = CosmosDBTestUtilities.GetCosmosDBClient(context, handler1);
 
-                bool isDatabaseNameExists = cosmosDBManagementClient.DatabaseAccounts.CheckNameExistsWithHttpMessagesAsync(databaseAccountName).GetAwaiter().GetResult().Body;
+                bool isDatabaseNameExists = cosmosDBManagementClient.DatabaseAccounts.CheckNameExistsWithHttpMessagesAsync(databaseAccountName2).GetAwaiter().GetResult().Body;
 
                 DatabaseAccountGetResults databaseAccount = null;
                 if (!isDatabaseNameExists)
@@ -284,8 +286,8 @@ namespace CosmosDB.Tests.ScenarioTests
                         }
                     };
 
-                    databaseAccount = cosmosDBManagementClient.DatabaseAccounts.CreateOrUpdateWithHttpMessagesAsync(resourceGroupName, databaseAccountName, databaseAccountCreateUpdateParameters).GetAwaiter().GetResult().Body;
-                    Assert.Equal(databaseAccount.Name, databaseAccountName);
+                    databaseAccount = cosmosDBManagementClient.DatabaseAccounts.CreateOrUpdateWithHttpMessagesAsync(resourceGroupName2, databaseAccountName2, databaseAccountCreateUpdateParameters).GetAwaiter().GetResult().Body;
+                    Assert.Equal(databaseAccount.Name, databaseAccountName2);
                 }
 
                 SqlRoleDefinitionCreateUpdateParameters sqlRoleDefinitionCreateUpdateParameters = new SqlRoleDefinitionCreateUpdateParameters
@@ -294,8 +296,8 @@ namespace CosmosDB.Tests.ScenarioTests
                     Type = RoleDefinitionType.CustomRole,
                     AssignableScopes = new List<string>
                     {
-                        string.Format("/subscriptions/{0}/resourceGroups/{1}/providers/Microsoft.DocumentDB/databaseAccounts/{2}/dbs/sales", cosmosDBManagementClient.SubscriptionId, resourceGroupName, databaseAccountName),
-                        string.Format("/subscriptions/{0}/resourceGroups/{1}/providers/Microsoft.DocumentDB/databaseAccounts/{2}/dbs/purchases", cosmosDBManagementClient.SubscriptionId, resourceGroupName, databaseAccountName)
+                        string.Format("/subscriptions/{0}/resourceGroups/{1}/providers/Microsoft.DocumentDB/databaseAccounts/{2}/dbs/sales", cosmosDBManagementClient.SubscriptionId, resourceGroupName2, databaseAccountName2),
+                        string.Format("/subscriptions/{0}/resourceGroups/{1}/providers/Microsoft.DocumentDB/databaseAccounts/{2}/dbs/purchases", cosmosDBManagementClient.SubscriptionId, resourceGroupName2, databaseAccountName2)
                     },
                     Permissions = new List<Permission>
                     {
