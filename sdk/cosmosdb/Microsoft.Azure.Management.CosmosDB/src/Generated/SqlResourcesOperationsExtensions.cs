@@ -1338,9 +1338,9 @@ namespace Microsoft.Azure.Management.CosmosDB
             /// <param name='accountName'>
             /// Cosmos DB database account name.
             /// </param>
-            public static SqlRoleDefinitionGetResults GetRoleDefinition(this ISqlResourcesOperations operations, string roleDefinitionId, string resourceGroupName, string accountName)
+            public static SqlRoleDefinitionGetResults GetSqlRoleDefinition(this ISqlResourcesOperations operations, string roleDefinitionId, string resourceGroupName, string accountName)
             {
-                return operations.GetRoleDefinitionAsync(roleDefinitionId, resourceGroupName, accountName).GetAwaiter().GetResult();
+                return operations.GetSqlRoleDefinitionAsync(roleDefinitionId, resourceGroupName, accountName).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -1362,9 +1362,9 @@ namespace Microsoft.Azure.Management.CosmosDB
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<SqlRoleDefinitionGetResults> GetRoleDefinitionAsync(this ISqlResourcesOperations operations, string roleDefinitionId, string resourceGroupName, string accountName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<SqlRoleDefinitionGetResults> GetSqlRoleDefinitionAsync(this ISqlResourcesOperations operations, string roleDefinitionId, string resourceGroupName, string accountName, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.GetRoleDefinitionWithHttpMessagesAsync(roleDefinitionId, resourceGroupName, accountName, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.GetSqlRoleDefinitionWithHttpMessagesAsync(roleDefinitionId, resourceGroupName, accountName, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
@@ -1388,9 +1388,9 @@ namespace Microsoft.Azure.Management.CosmosDB
             /// <param name='createUpdateSqlRoleDefinitionParameters'>
             /// The properties required to create or update a Role Definition.
             /// </param>
-            public static SqlRoleDefinitionGetResults CreateUpdateRoleDefinition(this ISqlResourcesOperations operations, string roleDefinitionId, string resourceGroupName, string accountName, SqlRoleDefinitionCreateUpdateParameters createUpdateSqlRoleDefinitionParameters)
+            public static SqlRoleDefinitionGetResults CreateUpdateSqlRoleDefinition(this ISqlResourcesOperations operations, string roleDefinitionId, string resourceGroupName, string accountName, SqlRoleDefinitionCreateUpdateParameters createUpdateSqlRoleDefinitionParameters)
             {
-                return operations.CreateUpdateRoleDefinitionAsync(roleDefinitionId, resourceGroupName, accountName, createUpdateSqlRoleDefinitionParameters).GetAwaiter().GetResult();
+                return operations.CreateUpdateSqlRoleDefinitionAsync(roleDefinitionId, resourceGroupName, accountName, createUpdateSqlRoleDefinitionParameters).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -1414,9 +1414,9 @@ namespace Microsoft.Azure.Management.CosmosDB
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<SqlRoleDefinitionGetResults> CreateUpdateRoleDefinitionAsync(this ISqlResourcesOperations operations, string roleDefinitionId, string resourceGroupName, string accountName, SqlRoleDefinitionCreateUpdateParameters createUpdateSqlRoleDefinitionParameters, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<SqlRoleDefinitionGetResults> CreateUpdateSqlRoleDefinitionAsync(this ISqlResourcesOperations operations, string roleDefinitionId, string resourceGroupName, string accountName, SqlRoleDefinitionCreateUpdateParameters createUpdateSqlRoleDefinitionParameters, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.CreateUpdateRoleDefinitionWithHttpMessagesAsync(roleDefinitionId, resourceGroupName, accountName, createUpdateSqlRoleDefinitionParameters, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.CreateUpdateSqlRoleDefinitionWithHttpMessagesAsync(roleDefinitionId, resourceGroupName, accountName, createUpdateSqlRoleDefinitionParameters, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
@@ -1437,9 +1437,9 @@ namespace Microsoft.Azure.Management.CosmosDB
             /// <param name='accountName'>
             /// Cosmos DB database account name.
             /// </param>
-            public static void DeleteRoleDefinition(this ISqlResourcesOperations operations, string roleDefinitionId, string resourceGroupName, string accountName)
+            public static void DeleteSqlRoleDefinition(this ISqlResourcesOperations operations, string roleDefinitionId, string resourceGroupName, string accountName)
             {
-                operations.DeleteRoleDefinitionAsync(roleDefinitionId, resourceGroupName, accountName).GetAwaiter().GetResult();
+                operations.DeleteSqlRoleDefinitionAsync(roleDefinitionId, resourceGroupName, accountName).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -1460,9 +1460,9 @@ namespace Microsoft.Azure.Management.CosmosDB
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task DeleteRoleDefinitionAsync(this ISqlResourcesOperations operations, string roleDefinitionId, string resourceGroupName, string accountName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task DeleteSqlRoleDefinitionAsync(this ISqlResourcesOperations operations, string roleDefinitionId, string resourceGroupName, string accountName, CancellationToken cancellationToken = default(CancellationToken))
             {
-                (await operations.DeleteRoleDefinitionWithHttpMessagesAsync(roleDefinitionId, resourceGroupName, accountName, null, cancellationToken).ConfigureAwait(false)).Dispose();
+                (await operations.DeleteSqlRoleDefinitionWithHttpMessagesAsync(roleDefinitionId, resourceGroupName, accountName, null, cancellationToken).ConfigureAwait(false)).Dispose();
             }
 
             /// <summary>
@@ -1477,9 +1477,9 @@ namespace Microsoft.Azure.Management.CosmosDB
             /// <param name='accountName'>
             /// Cosmos DB database account name.
             /// </param>
-            public static IEnumerable<SqlRoleDefinitionGetResults> ListRoleDefinitions(this ISqlResourcesOperations operations, string resourceGroupName, string accountName)
+            public static IEnumerable<SqlRoleDefinitionGetResults> ListSqlRoleDefinitions(this ISqlResourcesOperations operations, string resourceGroupName, string accountName)
             {
-                return operations.ListRoleDefinitionsAsync(resourceGroupName, accountName).GetAwaiter().GetResult();
+                return operations.ListSqlRoleDefinitionsAsync(resourceGroupName, accountName).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -1497,9 +1497,9 @@ namespace Microsoft.Azure.Management.CosmosDB
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IEnumerable<SqlRoleDefinitionGetResults>> ListRoleDefinitionsAsync(this ISqlResourcesOperations operations, string resourceGroupName, string accountName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IEnumerable<SqlRoleDefinitionGetResults>> ListSqlRoleDefinitionsAsync(this ISqlResourcesOperations operations, string resourceGroupName, string accountName, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.ListRoleDefinitionsWithHttpMessagesAsync(resourceGroupName, accountName, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.ListSqlRoleDefinitionsWithHttpMessagesAsync(resourceGroupName, accountName, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
@@ -1521,9 +1521,9 @@ namespace Microsoft.Azure.Management.CosmosDB
             /// <param name='accountName'>
             /// Cosmos DB database account name.
             /// </param>
-            public static SqlRoleAssignmentGetResults GetRoleAssignment(this ISqlResourcesOperations operations, string roleAssignmentId, string resourceGroupName, string accountName)
+            public static SqlRoleAssignmentGetResults GetSqlRoleAssignment(this ISqlResourcesOperations operations, string roleAssignmentId, string resourceGroupName, string accountName)
             {
-                return operations.GetRoleAssignmentAsync(roleAssignmentId, resourceGroupName, accountName).GetAwaiter().GetResult();
+                return operations.GetSqlRoleAssignmentAsync(roleAssignmentId, resourceGroupName, accountName).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -1545,9 +1545,9 @@ namespace Microsoft.Azure.Management.CosmosDB
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<SqlRoleAssignmentGetResults> GetRoleAssignmentAsync(this ISqlResourcesOperations operations, string roleAssignmentId, string resourceGroupName, string accountName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<SqlRoleAssignmentGetResults> GetSqlRoleAssignmentAsync(this ISqlResourcesOperations operations, string roleAssignmentId, string resourceGroupName, string accountName, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.GetRoleAssignmentWithHttpMessagesAsync(roleAssignmentId, resourceGroupName, accountName, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.GetSqlRoleAssignmentWithHttpMessagesAsync(roleAssignmentId, resourceGroupName, accountName, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
@@ -1571,9 +1571,9 @@ namespace Microsoft.Azure.Management.CosmosDB
             /// <param name='createUpdateSqlRoleAssignmentParameters'>
             /// The properties required to create or update a Role Assignment.
             /// </param>
-            public static SqlRoleAssignmentGetResults CreateUpdateRoleAssignment(this ISqlResourcesOperations operations, string roleAssignmentId, string resourceGroupName, string accountName, SqlRoleAssignmentCreateUpdateParameters createUpdateSqlRoleAssignmentParameters)
+            public static SqlRoleAssignmentGetResults CreateUpdateSqlRoleAssignment(this ISqlResourcesOperations operations, string roleAssignmentId, string resourceGroupName, string accountName, SqlRoleAssignmentCreateUpdateParameters createUpdateSqlRoleAssignmentParameters)
             {
-                return operations.CreateUpdateRoleAssignmentAsync(roleAssignmentId, resourceGroupName, accountName, createUpdateSqlRoleAssignmentParameters).GetAwaiter().GetResult();
+                return operations.CreateUpdateSqlRoleAssignmentAsync(roleAssignmentId, resourceGroupName, accountName, createUpdateSqlRoleAssignmentParameters).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -1597,9 +1597,9 @@ namespace Microsoft.Azure.Management.CosmosDB
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<SqlRoleAssignmentGetResults> CreateUpdateRoleAssignmentAsync(this ISqlResourcesOperations operations, string roleAssignmentId, string resourceGroupName, string accountName, SqlRoleAssignmentCreateUpdateParameters createUpdateSqlRoleAssignmentParameters, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<SqlRoleAssignmentGetResults> CreateUpdateSqlRoleAssignmentAsync(this ISqlResourcesOperations operations, string roleAssignmentId, string resourceGroupName, string accountName, SqlRoleAssignmentCreateUpdateParameters createUpdateSqlRoleAssignmentParameters, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.CreateUpdateRoleAssignmentWithHttpMessagesAsync(roleAssignmentId, resourceGroupName, accountName, createUpdateSqlRoleAssignmentParameters, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.CreateUpdateSqlRoleAssignmentWithHttpMessagesAsync(roleAssignmentId, resourceGroupName, accountName, createUpdateSqlRoleAssignmentParameters, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
@@ -1620,9 +1620,9 @@ namespace Microsoft.Azure.Management.CosmosDB
             /// <param name='accountName'>
             /// Cosmos DB database account name.
             /// </param>
-            public static void DeleteRoleAssignment(this ISqlResourcesOperations operations, string roleAssignmentId, string resourceGroupName, string accountName)
+            public static void DeleteSqlRoleAssignment(this ISqlResourcesOperations operations, string roleAssignmentId, string resourceGroupName, string accountName)
             {
-                operations.DeleteRoleAssignmentAsync(roleAssignmentId, resourceGroupName, accountName).GetAwaiter().GetResult();
+                operations.DeleteSqlRoleAssignmentAsync(roleAssignmentId, resourceGroupName, accountName).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -1643,9 +1643,9 @@ namespace Microsoft.Azure.Management.CosmosDB
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task DeleteRoleAssignmentAsync(this ISqlResourcesOperations operations, string roleAssignmentId, string resourceGroupName, string accountName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task DeleteSqlRoleAssignmentAsync(this ISqlResourcesOperations operations, string roleAssignmentId, string resourceGroupName, string accountName, CancellationToken cancellationToken = default(CancellationToken))
             {
-                (await operations.DeleteRoleAssignmentWithHttpMessagesAsync(roleAssignmentId, resourceGroupName, accountName, null, cancellationToken).ConfigureAwait(false)).Dispose();
+                (await operations.DeleteSqlRoleAssignmentWithHttpMessagesAsync(roleAssignmentId, resourceGroupName, accountName, null, cancellationToken).ConfigureAwait(false)).Dispose();
             }
 
             /// <summary>
@@ -1660,9 +1660,9 @@ namespace Microsoft.Azure.Management.CosmosDB
             /// <param name='accountName'>
             /// Cosmos DB database account name.
             /// </param>
-            public static IEnumerable<SqlRoleAssignmentGetResults> ListRoleAssignments(this ISqlResourcesOperations operations, string resourceGroupName, string accountName)
+            public static IEnumerable<SqlRoleAssignmentGetResults> ListSqlRoleAssignments(this ISqlResourcesOperations operations, string resourceGroupName, string accountName)
             {
-                return operations.ListRoleAssignmentsAsync(resourceGroupName, accountName).GetAwaiter().GetResult();
+                return operations.ListSqlRoleAssignmentsAsync(resourceGroupName, accountName).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -1680,9 +1680,9 @@ namespace Microsoft.Azure.Management.CosmosDB
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IEnumerable<SqlRoleAssignmentGetResults>> ListRoleAssignmentsAsync(this ISqlResourcesOperations operations, string resourceGroupName, string accountName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IEnumerable<SqlRoleAssignmentGetResults>> ListSqlRoleAssignmentsAsync(this ISqlResourcesOperations operations, string resourceGroupName, string accountName, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.ListRoleAssignmentsWithHttpMessagesAsync(resourceGroupName, accountName, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.ListSqlRoleAssignmentsWithHttpMessagesAsync(resourceGroupName, accountName, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
@@ -2379,9 +2379,9 @@ namespace Microsoft.Azure.Management.CosmosDB
             /// <param name='createUpdateSqlRoleDefinitionParameters'>
             /// The properties required to create or update a Role Definition.
             /// </param>
-            public static SqlRoleDefinitionGetResults BeginCreateUpdateRoleDefinition(this ISqlResourcesOperations operations, string roleDefinitionId, string resourceGroupName, string accountName, SqlRoleDefinitionCreateUpdateParameters createUpdateSqlRoleDefinitionParameters)
+            public static SqlRoleDefinitionGetResults BeginCreateUpdateSqlRoleDefinition(this ISqlResourcesOperations operations, string roleDefinitionId, string resourceGroupName, string accountName, SqlRoleDefinitionCreateUpdateParameters createUpdateSqlRoleDefinitionParameters)
             {
-                return operations.BeginCreateUpdateRoleDefinitionAsync(roleDefinitionId, resourceGroupName, accountName, createUpdateSqlRoleDefinitionParameters).GetAwaiter().GetResult();
+                return operations.BeginCreateUpdateSqlRoleDefinitionAsync(roleDefinitionId, resourceGroupName, accountName, createUpdateSqlRoleDefinitionParameters).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -2405,9 +2405,9 @@ namespace Microsoft.Azure.Management.CosmosDB
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<SqlRoleDefinitionGetResults> BeginCreateUpdateRoleDefinitionAsync(this ISqlResourcesOperations operations, string roleDefinitionId, string resourceGroupName, string accountName, SqlRoleDefinitionCreateUpdateParameters createUpdateSqlRoleDefinitionParameters, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<SqlRoleDefinitionGetResults> BeginCreateUpdateSqlRoleDefinitionAsync(this ISqlResourcesOperations operations, string roleDefinitionId, string resourceGroupName, string accountName, SqlRoleDefinitionCreateUpdateParameters createUpdateSqlRoleDefinitionParameters, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.BeginCreateUpdateRoleDefinitionWithHttpMessagesAsync(roleDefinitionId, resourceGroupName, accountName, createUpdateSqlRoleDefinitionParameters, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.BeginCreateUpdateSqlRoleDefinitionWithHttpMessagesAsync(roleDefinitionId, resourceGroupName, accountName, createUpdateSqlRoleDefinitionParameters, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
@@ -2428,9 +2428,9 @@ namespace Microsoft.Azure.Management.CosmosDB
             /// <param name='accountName'>
             /// Cosmos DB database account name.
             /// </param>
-            public static void BeginDeleteRoleDefinition(this ISqlResourcesOperations operations, string roleDefinitionId, string resourceGroupName, string accountName)
+            public static void BeginDeleteSqlRoleDefinition(this ISqlResourcesOperations operations, string roleDefinitionId, string resourceGroupName, string accountName)
             {
-                operations.BeginDeleteRoleDefinitionAsync(roleDefinitionId, resourceGroupName, accountName).GetAwaiter().GetResult();
+                operations.BeginDeleteSqlRoleDefinitionAsync(roleDefinitionId, resourceGroupName, accountName).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -2451,9 +2451,9 @@ namespace Microsoft.Azure.Management.CosmosDB
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task BeginDeleteRoleDefinitionAsync(this ISqlResourcesOperations operations, string roleDefinitionId, string resourceGroupName, string accountName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task BeginDeleteSqlRoleDefinitionAsync(this ISqlResourcesOperations operations, string roleDefinitionId, string resourceGroupName, string accountName, CancellationToken cancellationToken = default(CancellationToken))
             {
-                (await operations.BeginDeleteRoleDefinitionWithHttpMessagesAsync(roleDefinitionId, resourceGroupName, accountName, null, cancellationToken).ConfigureAwait(false)).Dispose();
+                (await operations.BeginDeleteSqlRoleDefinitionWithHttpMessagesAsync(roleDefinitionId, resourceGroupName, accountName, null, cancellationToken).ConfigureAwait(false)).Dispose();
             }
 
             /// <summary>
@@ -2474,9 +2474,9 @@ namespace Microsoft.Azure.Management.CosmosDB
             /// <param name='createUpdateSqlRoleAssignmentParameters'>
             /// The properties required to create or update a Role Assignment.
             /// </param>
-            public static SqlRoleAssignmentGetResults BeginCreateUpdateRoleAssignment(this ISqlResourcesOperations operations, string roleAssignmentId, string resourceGroupName, string accountName, SqlRoleAssignmentCreateUpdateParameters createUpdateSqlRoleAssignmentParameters)
+            public static SqlRoleAssignmentGetResults BeginCreateUpdateSqlRoleAssignment(this ISqlResourcesOperations operations, string roleAssignmentId, string resourceGroupName, string accountName, SqlRoleAssignmentCreateUpdateParameters createUpdateSqlRoleAssignmentParameters)
             {
-                return operations.BeginCreateUpdateRoleAssignmentAsync(roleAssignmentId, resourceGroupName, accountName, createUpdateSqlRoleAssignmentParameters).GetAwaiter().GetResult();
+                return operations.BeginCreateUpdateSqlRoleAssignmentAsync(roleAssignmentId, resourceGroupName, accountName, createUpdateSqlRoleAssignmentParameters).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -2500,9 +2500,9 @@ namespace Microsoft.Azure.Management.CosmosDB
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<SqlRoleAssignmentGetResults> BeginCreateUpdateRoleAssignmentAsync(this ISqlResourcesOperations operations, string roleAssignmentId, string resourceGroupName, string accountName, SqlRoleAssignmentCreateUpdateParameters createUpdateSqlRoleAssignmentParameters, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<SqlRoleAssignmentGetResults> BeginCreateUpdateSqlRoleAssignmentAsync(this ISqlResourcesOperations operations, string roleAssignmentId, string resourceGroupName, string accountName, SqlRoleAssignmentCreateUpdateParameters createUpdateSqlRoleAssignmentParameters, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.BeginCreateUpdateRoleAssignmentWithHttpMessagesAsync(roleAssignmentId, resourceGroupName, accountName, createUpdateSqlRoleAssignmentParameters, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.BeginCreateUpdateSqlRoleAssignmentWithHttpMessagesAsync(roleAssignmentId, resourceGroupName, accountName, createUpdateSqlRoleAssignmentParameters, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
@@ -2523,9 +2523,9 @@ namespace Microsoft.Azure.Management.CosmosDB
             /// <param name='accountName'>
             /// Cosmos DB database account name.
             /// </param>
-            public static void BeginDeleteRoleAssignment(this ISqlResourcesOperations operations, string roleAssignmentId, string resourceGroupName, string accountName)
+            public static void BeginDeleteSqlRoleAssignment(this ISqlResourcesOperations operations, string roleAssignmentId, string resourceGroupName, string accountName)
             {
-                operations.BeginDeleteRoleAssignmentAsync(roleAssignmentId, resourceGroupName, accountName).GetAwaiter().GetResult();
+                operations.BeginDeleteSqlRoleAssignmentAsync(roleAssignmentId, resourceGroupName, accountName).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -2546,9 +2546,9 @@ namespace Microsoft.Azure.Management.CosmosDB
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task BeginDeleteRoleAssignmentAsync(this ISqlResourcesOperations operations, string roleAssignmentId, string resourceGroupName, string accountName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task BeginDeleteSqlRoleAssignmentAsync(this ISqlResourcesOperations operations, string roleAssignmentId, string resourceGroupName, string accountName, CancellationToken cancellationToken = default(CancellationToken))
             {
-                (await operations.BeginDeleteRoleAssignmentWithHttpMessagesAsync(roleAssignmentId, resourceGroupName, accountName, null, cancellationToken).ConfigureAwait(false)).Dispose();
+                (await operations.BeginDeleteSqlRoleAssignmentWithHttpMessagesAsync(roleAssignmentId, resourceGroupName, accountName, null, cancellationToken).ConfigureAwait(false)).Dispose();
             }
 
     }
