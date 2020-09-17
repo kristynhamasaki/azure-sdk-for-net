@@ -28,10 +28,10 @@ namespace CosmosDB.Tests.ScenarioTests
         const string triggerName = "triggerName";
         const string userDefinedFunctionName = "userDefinedFunctionName";
 
-        readonly string roleDefinitionId = Guid.NewGuid().ToString();
-        readonly string roleDefinitionId2 = Guid.NewGuid().ToString();
-        readonly string roleAssignmentId = Guid.NewGuid().ToString();
-        readonly string roleAssignmentId2 = Guid.NewGuid().ToString();
+        readonly string roleDefinitionId = "70580ac3-cd0b-4549-8336-2f0d55df111e";
+        readonly string roleDefinitionId2 = "fbf74201-f33f-46f0-8234-2b8bf15ecec4";
+        readonly string roleAssignmentId = "adcb35e1-e104-41c2-b76d-70a8b03e6463";
+        readonly string roleAssignmentId2 = "d5fcc566-a91c-4fce-8f54-138855981e63";
         const string principalId = "ed4c2395-a18c-4018-afb3-6e521e7534d2";
         const string principalId2 = "d60019b0-c5a8-4e38-beb9-fb80daa3ce90";
 
@@ -303,7 +303,7 @@ namespace CosmosDB.Tests.ScenarioTests
 
                 SqlRoleDefinitionCreateUpdateParameters sqlRoleDefinitionCreateUpdateParameters2 = new SqlRoleDefinitionCreateUpdateParameters
                 {
-                    RoleName = "roleName",
+                    RoleName = "roleName2",
                     Type = RoleDefinitionType.CustomRole,
                     AssignableScopes = new List<string>
                     {
